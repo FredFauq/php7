@@ -5,18 +5,17 @@
         <title>Exercice 7</title>
     </head>
     <body>
-
       <!-- Ouverture des balises PHP dans une balise p -->
       <p>
         <?php
         // Vérification condition que le formulaire n'est pas vide
-        if (!empty($_POST['firstName']) || !empty($_POST['lastName']) || !empty($_FILES['xFile'])) {
+        if (!empty($_POST['civility']) || !empty($_POST['firstName']) || !empty($_POST['lastName']) || !empty($_FILES['uploadFile'])) {
           // Récupérationn des infos  du fichier
-          $infoFile = pathinfo($_FILES['xFile']['name']);
+          $infoFile = pathinfo($_FILES['uploadFile']['name']);
           // Stockage dans une variable de l'extension du fichier
-          $extension_upload = $infoFile['extension'];
+          $extensionUpload = $infoFile['extension'];
           // Si rempli affichage des données récoltées
-          echo strip_tags($_POST['gender']) . ' ' . strip_tags($_POST['firstName']) . ' ' . strip_tags($_POST['lastName']) . ' Votre fichier est : ' . $_FILES['xFile']['name'] . ' , et son extension est : ' . $extension_upload;
+          echo strip_tags($_POST['civility']) . ' ' . strip_tags($_POST['firstName']) . ' ' . strip_tags($_POST['lastName']) . ' Votre fichier est : ' . $_FILES['uploadFile']['name'] . ' , et son extension est : ' . $extensionUpload;
         } else {
           // Sinon affichage formulaire
           echo 'Veuillez remplir le formulaire';
@@ -29,14 +28,14 @@
         -->
         <form method="post" action="index.php " enctype="multipart/form-data">
           <!--champ de sélection du genre -->
-          <select name="gender">
-            <option value="Monsieur">Mr</option>
-            <option value="Madame">Mme</option>
+          <select name="civility">
+            <option value="mister">Mr</option>
+            <option value="miss">Mme</option>
           </select>
           <!-- Ajout des inputs avec leurs labels -->
           <p><label for="firstName">Nom :</label><input type="text" name="firstName"></p>
           <p><label for="lastName">Prénom :</label><input type="text" name="lastName"></p>
-          <p><label for="xFile">Fichier :</label><input type="file" name="xFile"></p>
+          <p><label for="uploadFile">Fichier :</label><input type="file" name="uploadFile"></p>
           <!-- Bouton Submit de validation du formulaire pour l'envoi des donnée-->
           <input type="submit" value="valider">
         </form>
