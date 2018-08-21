@@ -11,9 +11,9 @@
       -->
         <form method="get" action="user.php" >
           <!-- Ajout des inputs avec leurs labels -->
-          <label for="firstName">Nom :</label><input type="text" name="firstName">
-          <label for="lastName">Prénom :</label><input type="text" name="lastName">
-          <!-- Bouton Submit de validation du formulaire pour l'envoi des donnée-->
+          <label for="lastName">Nom :</label><input type="text" name="lastName" id="lastName" placeholder="Dupont">
+          <label for="firstName">Prénom :</label><input type="text" name="firstName"id="firstName" placeholder="Jean">
+          <!-- Bouton Submit de validation du formulaire pour l'envoi des données -->
           <input type="submit" value="valider">
         </form>
           <a href="../index.php"><button type="button">Retour</button></a>

@@ -27,7 +27,7 @@
       <p>
         <?php
         // Vérification des données du formulaire transmises par POSTs
-        if (isset($_POST['gender']) && isset($_POST['firstName']) && isset($_POST['lastName'])) {
+        if (!empty($_POST['gender']) && !empty($_POST['firstName']) && !empty($_POST['lastName'])) {
           // htmlspecialchars sert à échapper le code HTML et éviter les failles XSS (pour cross-site scripting)
           echo htmlspecialchars($_POST['gender']) . ', ' . htmlspecialchars($_POST['firstName']) . ' ' . htmlspecialchars($_POST['lastName']);
         }
