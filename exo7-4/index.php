@@ -11,8 +11,8 @@
       -->
         <form method="post" action="user.php" >
           <!-- Ajout des inputs avec leurs labels -->
-          <label for="lastName">Nom :</label><input type="text" name="lastName" id="lastName" placeholder="Dupont">
-          <label for="firstName">Prénom :</label><input type="text" name="firstName" id="firstName" placeholder="Jean">
+          <p><label for="lastName">Nom :</label><input type="text" name="lastName" id="lastName" placeholder="Dupont"></p>
+          <p><label for="firstName">Prénom :</label><input type="text" name="firstName" id="firstName" placeholder="Jean"></p>
           <!-- Bouton Submit de validation du formulaire pour l'envoi des donnée-->
           <input type="submit" value="valider">
         </form>
